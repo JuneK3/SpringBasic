@@ -3,13 +3,17 @@ package RootLab.Spring101.helloSpring.service;
 import RootLab.Spring101.helloSpring.domain.Member;
 import RootLab.Spring101.helloSpring.repository.MemberRepository;
 import RootLab.Spring101.helloSpring.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
 	private final MemberRepository memberRepository;
 
+	@Autowired
 	public MemberService(MemberRepository memberRepository) {
 		this.memberRepository = memberRepository;
 	}
