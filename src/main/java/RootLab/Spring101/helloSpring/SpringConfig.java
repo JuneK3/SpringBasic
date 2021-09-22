@@ -1,5 +1,6 @@
 package RootLab.Spring101.helloSpring;
 
+import RootLab.Spring101.helloSpring.aop.TimeTraceAop;
 import RootLab.Spring101.helloSpring.repository.*;
 import RootLab.Spring101.helloSpring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,6 @@ public class SpringConfig {
 	public SpringConfig(MemberRepository memberRepository) {
 		this.memberRepository = memberRepository;
 	}
-
 
 	@Bean
 	public MemberService memberService() {
