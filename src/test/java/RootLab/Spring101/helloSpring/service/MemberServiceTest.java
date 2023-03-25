@@ -12,17 +12,19 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class MemberServiceTest {
 
-	MemberService memberService;
+	//	MemoryMemberRepository memberRepository = new MemoryMemberRepository();
+//	MemberService memberService = new MemberService(memberRepository);
 	MemoryMemberRepository memberRepository;
+	MemberService memberService;
 
 	@BeforeEach
-	public void BeforeEach(){
+	public void BeforeEach() {
 		memberRepository = new MemoryMemberRepository();
 		memberService = new MemberService(memberRepository);
 	}
 
 	@AfterEach
-	public void AfterEach(){
+	public void AfterEach() {
 		memberRepository.clearStore();
 	}
 
@@ -41,7 +43,7 @@ class MemberServiceTest {
 	}
 
 	@Test
-	public void duplicateMember(){
+	public void duplicateMember() {
 		//given
 		Member member1 = new Member();
 		member1.setName("spring");

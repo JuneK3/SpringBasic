@@ -10,6 +10,10 @@ public class MemoryMemberRepository implements MemberRepository {
 	private static Map<Long, Member> store = new HashMap<>();
 	private static long sequence = 0L;
 
+	public MemoryMemberRepository() {
+		System.out.println("this in MemoryMemberRepository constructor = " + this);
+	}
+
 	@Override
 	public Member save(Member member) {
 		member.setId(++sequence);
